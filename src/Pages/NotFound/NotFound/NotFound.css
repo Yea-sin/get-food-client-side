@@ -1,0 +1,8 @@
+.img-sec {
+  position: relative;
+}
+.btn-sec {
+  position: absolute;
+  left: 47%;
+  bottom: 50px;
+}

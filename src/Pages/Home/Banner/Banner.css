@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+.banner-bg {
+  background-color: #cc2728;
+  padding-top: 150px;
+}
+
+.banner-bg h1 {
+  color: #fff;
+  font-size: 50px;
+  font-family: "Mochiy Pop P One", sans-serif;
+  margin: 25px 0;
+}
