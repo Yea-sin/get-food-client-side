@@ -7,12 +7,16 @@
 .order-form {
   margin-top: 100px;
 }
-.order-form input,
-textarea {
-  margin-bottom: 15px;
+.order-form input {
+  margin-bottom: 25px;
   width: 50%;
   border-style: none;
   border-bottom: 1px solid black;
+}
+.order-form textarea {
+  border-style: none;
+  border-bottom: 1px solid black;
+  width: 50%;
 }
 .submit-btn {
   width: 20%;

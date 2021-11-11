@@ -4,18 +4,17 @@ import { Button } from "react-bootstrap";
 const ManageItems = () => {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/foods")
+    fetch("https://calm-plains-56945.herokuapp.com/foods")
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/foods/${id}`, {
+    fetch(`https://calm-plains-56945.herokuapp.com/foods/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.deletedCount > 0) {
           alert("Deleted Successfully");
           const remainingServices = foods.filter((food) => food._id !== id);

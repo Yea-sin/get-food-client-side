@@ -6,14 +6,16 @@ import axios from "axios";
 const AddItem = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    axios.post("http://localhost:5000/foods", data).then((res) => {
-      console.log(res);
-      if (res.data.insertedId) {
-        alert("added successfully");
-        reset();
-      }
-    });
+    // console.log(data);
+    axios
+      .post("https://calm-plains-56945.herokuapp.com/foods", data)
+      .then((res) => {
+        // console.log(res);
+        if (res.data.insertedId) {
+          alert("added successfully");
+          reset();
+        }
+      });
   };
   return (
     <div className="top-margin">

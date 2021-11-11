@@ -29,7 +29,7 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <PrivateRoute path="/order">
+            <PrivateRoute path="/order/:orderId">
               <PlaceOrder />
             </PrivateRoute>
             <PrivateRoute path="/myOrders">

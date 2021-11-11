@@ -1,10 +1,14 @@
 import React from "react";
 import "./Food.css";
 import { Button, Card, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 
 const Food = ({ food }) => {
-  const { name, img, description } = food;
+  const { name, img, description, _id } = food;
+  const history = useHistory();
+  const handleOrder = (id) => {
+    history.push(`/order/${id}`);
+  };
   return (
     <div>
       <Col>
@@ -15,9 +19,9 @@ const Food = ({ food }) => {
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>{description.slice(0, 150)}</Card.Text>
-            <Link to="/order">
-              <Button variant="outline-warning">Order Now</Button>{" "}
-            </Link>
+            <Button onClick={() => handleOrder(_id)} variant="outline-warning">
+              Order Now
+            </Button>{" "}
           </Card.Body>
         </Card>
       </Col>
