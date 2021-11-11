@@ -6,7 +6,6 @@ import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
   const { user, singInUsingGoogle, logOut, error } = useAuth();
-  console.log(user);
   const location = useLocation();
   const history = useHistory();
   const redirect = location.state?.from || "/";
