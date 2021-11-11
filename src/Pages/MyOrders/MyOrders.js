@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://thawing-basin-06378.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://thawing-basin-06378.herokuapp.com/orders/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

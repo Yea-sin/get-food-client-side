@@ -13,7 +13,7 @@ const PlaceOrder = () => {
 
   const [food, setFood] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/foods/${orderId}`;
+    const url = `https://thawing-basin-06378.herokuapp.com/foods/${orderId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setFood(data));
@@ -21,12 +21,14 @@ const PlaceOrder = () => {
   let orderedFood = food;
   const onSubmit = (data) => {
     data.order = orderedFood;
-    axios.post("http://localhost:5000/orders", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Successfully Submitted");
-        reset();
-      }
-    });
+    axios
+      .post("https://thawing-basin-06378.herokuapp.com/orders", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Successfully Submitted");
+          reset();
+        }
+      });
   };
 
   return (
