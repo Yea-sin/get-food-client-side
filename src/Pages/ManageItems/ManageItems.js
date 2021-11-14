@@ -4,13 +4,13 @@ import { Button } from "react-bootstrap";
 const ManageItems = () => {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    fetch("https://calm-plains-56945.herokuapp.com/foods")
+    fetch("https://thawing-basin-06378.herokuapp.com/foods")
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`https://calm-plains-56945.herokuapp.com/foods/${id}`, {
+    fetch(`https://thawing-basin-06378.herokuapp.com/foods/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
